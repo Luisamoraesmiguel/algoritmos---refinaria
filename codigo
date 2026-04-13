@@ -1,0 +1,10 @@
+def exibir_cabecalho():
+    print("="*50)
+    print("{:^50}".format("REFINARIA DELTA-9 - SISTEMA SEUC-4"))
+    print("{:^50}".format("SENTINELA DE FLUXO ATIVA"))
+    print("="*50)
+
+
+exibir_cabecalho()
+total = int(input(">>> Digite o total de leituras programadas para o turno: "))
+print("INÍCIANDO MONITORAMENTO DE TURNOS... ")
