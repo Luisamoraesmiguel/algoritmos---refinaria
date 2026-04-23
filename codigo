@@ -3,7 +3,7 @@ def exibir_cabecalho():
     print("{:^50}".format("REFINARIA DELTA-9 - SISTEMA SEUC-4"))
     print("{:^50}".format("SENTINELA DE FLUXO ATIVA"))
     print("="*50)
-
+#perguntar se tudo bem usar essa formatação, pq ela n deu em aula
 
 exibir_cabecalho()
 total = int(input(">>> Digite o total de leituras programadas para o turno: "))
