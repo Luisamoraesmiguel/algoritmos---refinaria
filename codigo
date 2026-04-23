@@ -1,10 +1,61 @@
 def exibir_cabecalho():
     print("="*50)
+    print("{:^50}".format("BEM-VINDO AO SEUC-4!"))
     print("{:^50}".format("REFINARIA DELTA-9 - SISTEMA SEUC-4"))
     print("{:^50}".format("SENTINELA DE FLUXO ATIVA"))
     print("="*50)
-#perguntar se tudo bem usar essa formatação, pq ela n deu em aula
 
-exibir_cabecalho()
+#função ajuste, apagar dps
+def ajuste(valor):
+    if valor > 150:
+        return valor*1.08
+    if valor <= 150:
+        return valor*0.96
+    
+#função classificar, apagar dps
+def classificar_a_zona(valor):
+    valor_ajustado = ajuste(valor)
+    if 120 <= valor_ajustado <= 180:
+        return "Verde"
+    elif valor_ajustado > 250:
+        return "Vermelha"
+    else:
+        return "Amarela"
+
+
+#função para iniciar programa
+def iniciar_monitoramento():
+    exibir_cabecalho()
+cont_leituras=0
+cont_zona_verde=0
+soma_pressoes=0
+travamento=0
+cont_zona_vermelha=0
+menor_pressao=-1
 total = int(input(">>> Digite o total de leituras programadas para o turno: "))
 print("INÍCIANDO MONITORAMENTO DE TURNOS... ")
+
+for i in range(total):
+    pressao=float(input(">>> Digite a pressão da leitura : "))
+    cont_leituras+=1
+    ajustada = ajuste(pressao)
+    soma_pressoes+=ajustada
+    zona = classificar_a_zona(ajustada)
+    if menor_pressao == -1 or ajustada < menor_pressao:
+            menor_pressao = ajustada
+    if zona == "Verde":
+        cont_zona_verde+=1
+        cont_zona_vermelha=0
+    elif zona == "Vermelha":
+        cont_zona_vermelha+=1
+    else:
+        cont_zona_vermelha=0
+
+    print(f">>> PRESSÃO AJUSTADA: {ajustada:.2f} UPC || ZONA: {zona}")
+
+    if cont_zona_vermelha == 2:
+        print("\n!!! ALERTA: FADIGA DE MATERIAL DETECTADA !!!")
+        print("!!! 2 ZONAS VERMELHAS CONSECUTIVAS !!!")
+        print("!!! SISTEMA INTERROMPIDO POR SEGURANÇA  !!!")
+        status_travamento = 1
+        break
