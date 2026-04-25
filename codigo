@@ -66,16 +66,16 @@ def iniciar_monitoramento():
         media = soma_pressoes / cont_leituras
         perc_verde = (cont_zona_verde / cont_leituras) * 100
             
-        print(f"\n1. Média das pressões: {media:.2f} UPC")
-        print(f"2. Menor pressão registrada: {menor_pressao:.2f} UPC")
-        print(f"3. Estabilidade (Percentual de Zona Verde): {perc_verde:.2f}%")
-        print(f"4. Desgaste Total: {desgaste:.2f} UPC")
+        print(f"\n>>> Média das pressões: {media:.2f} UPC")
+        print(f"\n>>> Menor pressão registrada: {menor_pressao:.2f} UPC")
+        print(f"\n>>> Estabilidade (Percentual de Zona Verde): {perc_verde:.2f}%")
+        print(f"\n>>> Desgaste Total: {desgaste:.2f} UPC")
             
         if travamento == 1:
             perc_realizado = (cont_leituras / total) * 100
-            print(f"1. STATUS: TRAVAMENTO IMEDIATO")
-            print(f"2. PERCENTUAL EXECUTADO: {perc_realizado:.2f}%")
-            print(f"3. Desgaste Total: {desgaste:.2f} UPC")
+            print(f"\n>>> STATUS: TRAVAMENTO IMEDIATO")
+            print(f"\n>>> PERCENTUAL EXECUTADO: {perc_realizado:.2f}%")
+            print(f"\n>>>Desgaste Total: {desgaste:.2f} UPC")
         else:
             print("{:^50}".format("STATUS: TURNO FINALIZADO COM SUCESSO"))
         
