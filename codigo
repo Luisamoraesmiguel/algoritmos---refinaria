@@ -33,7 +33,7 @@ def iniciar_monitoramento():
     print("INÍCIANDO MONITORAMENTO DE TURNOS... ")
 
     for i in range(total):
-        pressao=float(input("\n>>> Digite a pressão da leitura {cont_leituras+1} : "))
+        pressao=float(input(f"\n>>> Digite a pressão da leitura {cont_leituras+1} : "))
         cont_leituras+=1
         ajustada = ajuste(pressao)
         desgaste = desgaste + (ajustada - pressao)
