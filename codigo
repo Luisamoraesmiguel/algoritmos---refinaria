@@ -55,7 +55,7 @@ def iniciar_monitoramento():
             print("\n!!! ALERTA: FADIGA DE MATERIAL DETECTADA !!!")
             print("   !!! 2 ZONAS VERMELHAS CONSECUTIVAS !!!")
             print("!!!  SISTEMA INTERROMPIDO POR SEGURANÇA  !!!")
-            status_travamento = 1
+            travamento = 1
             break
 
     print("\n==================================================")
