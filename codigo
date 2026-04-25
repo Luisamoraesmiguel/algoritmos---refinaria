@@ -12,7 +12,7 @@ def ajuste(valor):
         return valor*0.96
 
 def classificar_a_zona(valor):
-    valor_ajustado = ajuste(valor)
+    valor_ajustado = valor
     if 120 <= valor_ajustado <= 180:
         return "Verde"
     elif valor_ajustado > 250:
