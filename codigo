@@ -53,7 +53,7 @@ def iniciar_monitoramento():
 
         if cont_zona_vermelha == 2:
             print("\n!!! ALERTA: FADIGA DE MATERIAL DETECTADA !!!")
-            print("!!! 2 ZONAS VERMELHAS CONSECUTIVAS !!!")
+            print("   !!! 2 ZONAS VERMELHAS CONSECUTIVAS !!!")
             print("!!! SISTEMA INTERROMPIDO POR SEGURANÇA  !!!")
             status_travamento = 1
             break
